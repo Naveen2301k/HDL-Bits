@@ -1,9 +1,6 @@
 module top_module (
-    input c,
-    input d,
-    output [3:0] mux_in
+    input [4:1] x,
+    output f
 ); 
-    
-    assign mux_in = {(c&d),(~d),1'b0, (c|d)};
-
+    assign f = (~x[1]&x[3])|(~x[2]&~x[4])|(x[2]&x[3]&x[4]);
 endmodule
